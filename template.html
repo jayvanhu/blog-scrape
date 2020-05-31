@@ -1,0 +1,7 @@
+<ul>
+	{{ range . }}
+	<li>
+		<span>{{ .Date }} </span> <a href="{{ .Href }}">{{ .Title }}</a>
+	</li>
+	{{ end }}
+</ul>
