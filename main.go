@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
 	"html/template"
 	"io/ioutil"
 	"net/http"
@@ -12,11 +11,13 @@ import (
 	str "strings"
 	"sync"
 	"time"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 /// Globals
 var wg sync.WaitGroup
-var scrapeFile string = "dist/scraped-links.txt"
+var scrapeFile = "dist/scraped-links.txt"
 var client *http.Client
 
 type Config struct {
@@ -111,6 +112,7 @@ func scrapeLink(hrefs <-chan string, output chan<- Article, wait bool) {
 		util.HandleErr(err)
 		defer res.Body.Close()
 		document, err := goquery.NewDocumentFromReader(res.Body)
+		util.HandleErr(err)
 
 		document.Find("header.entry-header").Each(func(i int, header *goquery.Selection) {
 			dateStr, okDate := header.Find("time.entry-date").Attr("datetime")
@@ -196,7 +198,7 @@ func createHtml() {
 	defer outputFile.Close()
 
 	render.Execute(outputFile, articles)
-	render.Execute(os.Stdout, articles)
+	// render.Execute(os.Stdout, articles)
 }
 
 func main() {
