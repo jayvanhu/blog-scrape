@@ -2,6 +2,7 @@ package util
 
 import (
 	"os"
+	"path/filepath"
 )
 
 func HandleErr(err error) {
@@ -11,6 +12,10 @@ func HandleErr(err error) {
 }
 
 func WriteToFile(filename, text string) {
+	dir := filepath.Dir(filename)
+	// use MkdirAll to return nil if dir already exists
+	err := os.MkdirAll(dir, 0755)
+	HandleErr(err)
 	file, err := os.Create(filename)
 	HandleErr(err)
 	_, err = file.WriteString(text)
