@@ -1,5 +1,5 @@
 # Scraper for Joel Spolsky's Blog https://www.joelonsoftware.com/
-Joel Spolsky is the former CEO of Stack Overflow and has his own blog. He doesn't have a list of his posts with just the title and links to the post; this archive page https://www.joelonsoftware.com/archives/ shows the months (not titles) he's posted in, and clicking on the months shows all the actual article content for that month (instead of only the titles for easier browsing). 
+Joel Spolsky is the former CEO of Stack Overflow and has his own blog. He doesn't have a list of his posts with just the title and links to the post; this archive page https://www.joelonsoftware.com/archives/ shows the months (not titles) he's posted in, and clicking on the months shows all the actual article content for that month (instead of only the titles). This scraper extracts those article titles + links and outputs them to an html file for easier browsing.
 
 # Running
 * git clone
