@@ -15,6 +15,7 @@ Original version.
 * `MaxGoRoutines` sets the maximum number of goroutines used to scrape the blog
 * `BufferSize` sets the capacity of the channel and array used to store articles
 * `ScrapeDelay` sets the delay in milliseconds before a goroutine scrapes another link
+* `FastDebug` if `true`, simplifies/reduces/speeds-up certain portions
 
 # Python
 Written using Python 3.9. Doesn't have HTML file feature (yet?).

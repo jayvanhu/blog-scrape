@@ -1,5 +1,6 @@
 {
 	"MaxGoroutines": 2,
 	"BufferSize": 500,
-	"ScrapeDelay": 500
+	"ScrapeDelay": 500,
+	"FastDebug": false
 }

@@ -24,6 +24,7 @@ type Config struct {
 	MaxGoroutines int
 	BufferSize    int
 	ScrapeDelay   time.Duration
+	FastDebug     bool
 }
 
 var config Config
@@ -144,8 +145,9 @@ func scrape() {
 	}
 
 	links := getSiteLinks()
-	// Uncomment to limit links
-	// links = links[:2]
+	if config.FastDebug {
+		links = links[:2]
+	}
 
 	// future: sort results by date
 	initialArticleBuffer := 500
