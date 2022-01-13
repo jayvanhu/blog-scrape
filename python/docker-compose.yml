@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  python:
+    build: ./
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: python scrape.py

@@ -108,7 +108,6 @@ def start_scrape():
 	with open(file_name, 'w') as file:
 		json.dump(articles_json, file, indent=4)
 
-# TODO dockerize app
 # TODO generate html representation of scraped data
 if __name__ == '__main__':
 	start_scrape()

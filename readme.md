@@ -22,7 +22,9 @@ Written using Python 3.9. Doesn't have HTML file feature (yet?).
 
 ## Running
 * `cd blog-scrape/python/`
-* `python scrape.py`
+* Run either:
+	* Python 3.9 - `python scrape.py`
+	* Docker - `docker-compose up`
 * See output in `dist/scraped-links.json`
 
 ## Config
